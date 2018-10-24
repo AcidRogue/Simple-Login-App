@@ -1,0 +1,85 @@
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/SourceSansPro-Regular.otf");
+}
+
+* {margin: 0;padding: 0;}
+
+body {
+    background-image: url("../images/background.jpg");
+}
+#main {
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    margin: 5% auto;
+    background-color: #e6eff7;
+}
+#loginDiv {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#loginDiv h1 {
+    font-family: Lato;
+    text-align: center;
+    font-size: 40px;
+    color: #494949;
+}
+#loginDiv p {
+    font-family: Lato;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 4px;
+    color: #494949;
+}
+#line {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 1px;
+    width: auto;
+    background-color: #494949;
+}
+#loginForm{
+    margin: 6% auto 4%;
+    width: 75%;
+}
+#loginForm p{
+    font-family: Lato;
+    font-size:25px;
+    color: #494949;
+}
+#loginForm input{
+    border-radius: 4px;
+    border-style:solid;
+    border-color: rgba(64, 136, 147, 0.45);
+    height: 27px;
+    width: 100%;
+    margin-top: 1%;
+    font-size: 20px;
+}
+.username, .password{
+    margin-bottom: 4%;
+}
+.button{
+    width: 75%;
+    margin: auto auto 3%;
+}
+.button button{
+    border-style: solid;
+    border-radius: 3px;
+    height: 35px;
+    width: 70px;
+    font-family: Lato;
+    font-size: 17px;
+    border-color: rgba(64, 136, 147, 0.45);
+}
+#noaccount{
+    margin: auto;
+    width: 75%;
+    margin-top: 5%;
+}
+#noaccount p{
+    font-family: Lato;
+    font-size: 17px;
+    color: #494949;
+}

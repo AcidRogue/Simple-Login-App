@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+</head>
+<body>
+<div id="main">
+	<div id="loginDiv">
+		<h1>Login</h1>
+		<p>Please enter your credentials</p>
+	</div>
+	<div id="line"></div>
+
+	<form action="login.html" method="post">
+		<div id="loginForm">
+			<div class="username">
+				<p>Username or E-Mail:</p>
+				<input type="text" name="username_email">
+			</div>
+
+			<div class="password">
+				<p>Password:</p>
+				<input type="password" name="password">
+			</div>
+		</div>
+
+		<div class="button" id="registerbtn">
+			<button type="submit">Login</button>
+		</div>
+
+	</form>
+
+	<div id="noaccount"><p>Don't have an account? Register <a id="register" href="register.html">here.</a></p></div>
+
+</div>
+</body>
+</html>
