@@ -30,7 +30,7 @@ router.post("/", function post(req, res) {
             res.render("register", {errors: errors});
         }
 
-        if(!usernameIsValid(username) || ){
+        if(!usernameIsValid(username)){
             errors.push({error: "Username cannot contain special characters"});
         }
     }
@@ -43,7 +43,7 @@ function usernameIsValid(username){
     return true;
 }
 function emailIsValid(email){
-    
+
 }
 
 module.exports = router;

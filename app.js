@@ -8,8 +8,8 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
     host: "localhost",
-    user: "acidrogue",
-    password: "predator98"
+    user: "",
+    password: ""
 });
 
 module.exports.connection = con;
