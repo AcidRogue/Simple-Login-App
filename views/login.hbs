@@ -30,6 +30,13 @@
 			<button type="submit">Login</button>
 		</div>
 
+		<div class = "error">
+			<ul>
+				{{#each errors}}
+					<li><p>{{error}}</p></li>
+				{{/each}}
+			</ul>
+		</div>
 	</form>
 
 	<div id="noaccount"><p>Don't have an account? Register <a id="register" href="register.html">here.</a></p></div>

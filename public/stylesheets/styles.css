@@ -16,7 +16,7 @@ body {
 #main {
     border-radius: 10px;
     width: 500px;
-    height: 600px;
+    height: 650px;
     margin: 5% auto;
     background-color: #e6eff7;
 }
@@ -96,4 +96,11 @@ button{
 }
 .prompt button{
     margin-right: 10px;
+}
+.error{
+    margin-left: 80px;
+    width: 90%;
+}
+.error p{
+    color: #ff484a;
 }

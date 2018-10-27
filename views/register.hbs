@@ -17,22 +17,22 @@
 		<div id="loginForm">
 			<div class="username">
 				<p>Username:</p>
-				<input type="text">
+				<input type="text" name="username">
 			</div>
 
 			<div class="username">
 				<p>E-Mail:</p>
-				<input type="text">
+				<input type="text" name="email">
 			</div>
 
 			<div class="password">
 				<p>Password:</p>
-				<input type="password">
+				<input type="password" name="password">
 			</div>
 
 			<div class="password">
 				<p>Repeat password:</p>
-				<input type="password">
+				<input type="password" name="repeatPassword">
 			</div>
 		</div>
 
@@ -40,6 +40,14 @@
 			<button type="submit">Register</button>
 		</div>
 	</form>
+
+	<div class = "error">
+		<ul>
+			{{#each errors}}
+				<li><p>{{error}}</p></li>
+			{{/each}}
+		</ul>
+	</div>
 </div>
 </body>
 </html>
