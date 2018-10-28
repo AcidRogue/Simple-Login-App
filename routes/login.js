@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../database/connection");
+var bcrypt = require("bcrypt");
 
 router.get("/", function get(req, res) {
     res.render("login");
@@ -36,16 +37,24 @@ router.post("/", function post(req, res) {
             if (err) {
                 console.log("Error has occurred.")
             } else {
-                connection.query(`SELECT * FROM users WHERE ${toCheck} = "${usernameOrEmail}" and \`password\` = "${password}"`, function (err, rows, fields) {
+                connection.query(`SELECT * FROM users WHERE ${toCheck} = "${usernameOrEmail}"`, function (err, rows, fields) {
                     if (err) {
                         console.log("Error has occurred.")
                     }
                     else {
                         if (rows.length > 0) {
-                            res.redirect("afterlogin.html")
+                            let hashedPassword = rows[0].password;
+                            if (bcrypt.compareSync(password, hashedPassword)) {
+                                console.log("success");
+                                res.redirect("afterlogin.html");
+                            }
+                            else {
+                                errors.push({error: "Wrong username or password"});
+                                res.render("login", {errors: errors});
+                            }
                         }
-                        else {
-                            errors.push({error: "Wrong username or password"});
+                        else{
+                            errors.push({error: "Username or email not found"});
                             res.render("login", {errors: errors});
                         }
                     }
