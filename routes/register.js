@@ -63,7 +63,7 @@ router.post("/", function post(req, res) {
                         return;
                     }
                     else {
-                        res.render("afterlogin");
+                        res.redirect("login.hbs");
                     }
                 });
                 connection.release();

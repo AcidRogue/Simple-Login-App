@@ -1,14 +1,15 @@
 var express = require('express');
+
 var router = express.Router();
-var afterLoginRouter = require('./afterlogin');
+var dashboardRouter = require('./dashboard');
 var indexRouter = require('./index');
 var loginRouter = require('./login');
 var registerRouter = require('./register');
 
-router.use('/afterLogin.html', afterLoginRouter);
-router.use('/login.html', loginRouter);
+router.use('/dashboard.hbs', dashboardRouter);
+router.use('/login.hbs', loginRouter);
 router.use('/', indexRouter);
-router.use('/register.html', registerRouter);
+router.use('/register.hbs', registerRouter);
 
 module.exports = router;
 

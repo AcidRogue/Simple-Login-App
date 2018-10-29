@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+</head>
+<body>
+<div id="main">
+	<div class = "header">
+		<h1 class="title">Dashboard</h1>
+	</div>
+	<div id="line"></div>
+	<div class="maintext">
+		<p>Welcome to your{{#if isAdmin}} admin{{/if}} dashboard, {{user}}.</p>
+	</div>
+	{{#if isAdmin}}
+		<div id="adminDiv">
+			<form action="dashboard.hbs">
+				<button type="submit" value="View users"></button>
+			</form>
+		</div>
+	{{/if}}
+</div>
+</body>
+</html>

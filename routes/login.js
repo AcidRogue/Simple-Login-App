@@ -6,7 +6,6 @@ var bcrypt = require("bcrypt");
 router.get("/", function get(req, res) {
     res.render("login");
 });
-
 router.post("/", function post(req, res) {
         let args = req.body;
         let usernameOrEmail = args.username_email;
@@ -45,15 +44,15 @@ router.post("/", function post(req, res) {
                         if (rows.length > 0) {
                             let hashedPassword = rows[0].password;
                             if (bcrypt.compareSync(password, hashedPassword)) {
-                                console.log("success");
-                                res.redirect("afterlogin.html");
+                                console.log("aaa");
+                                res.redirect("dashboard.hbs");
                             }
                             else {
                                 errors.push({error: "Wrong username or password"});
                                 res.render("login", {errors: errors});
                             }
                         }
-                        else{
+                        else {
                             errors.push({error: "Username or email not found"});
                             res.render("login", {errors: errors});
                         }
