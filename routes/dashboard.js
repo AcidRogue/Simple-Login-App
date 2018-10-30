@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var user = require("../user/user");
+var auth = require("../auth/auth");
 
-router.get("/", function post(req, res) {
-    res.render("dashboard", );
+router.get("/", auth.isAuthorized, function post(req, res) {
+    res.render("dashboard", {user: user.username, isAdmin: user.isAdmin});
 });
 router.post("/", function post(req, res) {
-
+    res.redirect('dashboard/users.hbs');
 });
-
 
 module.exports = router;

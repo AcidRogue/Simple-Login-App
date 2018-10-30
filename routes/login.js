@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require("../database/connection");
 var bcrypt = require("bcrypt");
+var user = require("../user/user");
 
 router.get("/", function get(req, res) {
     res.render("login");
@@ -44,7 +45,10 @@ router.post("/", function post(req, res) {
                         if (rows.length > 0) {
                             let hashedPassword = rows[0].password;
                             if (bcrypt.compareSync(password, hashedPassword)) {
-                                console.log("aaa");
+                                user.username = rows[0].username;
+                                user.email = rows[0].email;
+                                user.isLoggedIn = true;
+                                user.isAdmin = rows[0].isAdmin === 1;
                                 res.redirect("dashboard.hbs");
                             }
                             else {
