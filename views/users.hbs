@@ -7,12 +7,12 @@
 </head>
 <body>
 <div id="main">
-	<div class = "header">
+	<div class="header">
 		<h1 class="title">Dashboard</h1>
 	</div>
 	<div id="line"></div>
 
-	<div id="users">
+	<div id="users" style="margin: auto; width: 55%;">
 		<table border="1">
 			<tr>
 				<th><p>id</p></th>
@@ -22,11 +22,13 @@
 				<th><p>isAdmin</p></th>
 			</tr>
 			{{#each users}}
-				<th><p>{{user.id}}</p></th>
-				<th><p>{{user.username}}</p></th>
-				<th><p>{{user.email}}</p></th>
-				<th><p>{{user.password}}</p></th>
-				<th><p>{{user.isAdmin}}</p></th>
+				<tr>
+					<th><p>{{user.id}}</p></th>
+					<th><p>{{user.username}}</p></th>
+					<th><p>{{user.email}}</p></th>
+					<th><p>{{user.password}}</p></th>
+					<th><p>{{user.isAdmin}}</p></th>
+				</tr>
 			{{/each}}
 		</table>
 	</div>
