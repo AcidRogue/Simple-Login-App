@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="main">
-	<div class = "header">
+	<div class="header">
 		<h1 class="title">Dashboard</h1>
 	</div>
 	<div id="line"></div>
@@ -16,8 +16,11 @@
 	</div>
 	{{#if isAdmin}}
 		<div class="loginRegisterBtns">
-			<form action="dashboard.hbs" method="post">
-				<button style="width: auto" type="submit">View users</button>
+			<form method="get">
+				<button formaction="dashboard/users.hbs" style="width: auto" type="submit">View users</button>
+			</form>
+			<form method="post">
+				<button formaction="dashboard.hbs" style="width: auto" type="submit">Logout</button>
 			</form>
 		</div>
 	{{/if}}

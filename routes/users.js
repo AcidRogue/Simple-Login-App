@@ -4,7 +4,6 @@ var auth = require("../auth/auth");
 let db = require("../database/connection");
 
 router.get("/", auth.isAuthorized, async function post(req, res) {
-    console.log(getUsers());
     res.render("users", {users: await getUsers()});
 });
 router.post("/", function post(req, res) {

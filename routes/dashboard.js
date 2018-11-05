@@ -7,7 +7,11 @@ router.get("/", auth.isAuthorized, function post(req, res) {
     res.render("dashboard", {user: user.username, isAdmin: user.isAdmin});
 });
 router.post("/", function post(req, res) {
-    res.redirect('dashboard/users.hbs');
+    user.username = "";
+    user.email = "";
+    user.isLoggedIn = false;
+    user.isAdmin = false;
+    res.redirect("/");
 });
 
 module.exports = router;
